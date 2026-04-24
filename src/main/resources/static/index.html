@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<h1>💸 Expense Tracker</h1>
+
+<div class="container">
+
+    <!-- Add Expense -->
+    <div class="section">
+        <h2>Track a new expense</h2>
+
+        <label for="amount">Amount (₹)</label>
+        <input
+                id="amount"
+                type="number"
+                min="1"
+                step="1"
+                placeholder="Enter amount (numbers only)"
+        />
+
+        <label for="category">Category</label>
+        <input
+                id="category"
+                placeholder="e.g. Food, Travel, Shopping"
+        />
+
+        <label for="description">Description</label>
+        <input
+                id="description"
+                placeholder="Optional notes..."
+        />
+
+        <label for="date">Date</label>
+        <input
+                id="date"
+                type="date"
+        />
+
+        <button onclick="addExpense()">Add Expense</button>
+    </div>
+
+    <!-- Filter & Sort -->
+    <div class="section">
+        <h2>Find your expenses</h2>
+
+        <div class="filters">
+            <input
+                    id="filterCategory"
+                    placeholder="Search category (type to filter...)"
+            />
+
+            <button id="sortBtn" onclick="toggleSort()">
+                Sort By Date
+            </button>
+        </div>
+    </div>
+
+    <!-- Total -->
+    <div class="section">
+        <div class="total">
+            Total: ₹<span id="total">0</span>
+        </div>
+    </div>
+
+    <!-- List -->
+    <div class="section">
+        <h2>Your Expenses</h2>
+
+        <div id="list"></div>
+
+        <div id="status" class="status"></div>
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
