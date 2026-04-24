@@ -9,8 +9,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "expenses")  // Optional: custom table name; remove if you want the default "expense"
-@Data
+@Table(name = "expenses")
 @NoArgsConstructor
 @AllArgsConstructor
 public class Expense {
@@ -34,7 +33,6 @@ public class Expense {
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
-    // Optional: Pre-persist hook to set createdAt if not set
     @PrePersist
     protected void onCreate() {
         if (createdAt == null) {

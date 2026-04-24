@@ -26,10 +26,6 @@ class ExpenseControllerTest {
     @Autowired
     private ObjectMapper objectMapper;
 
-    // ======================
-    // ✅ POSITIVE TESTS
-    // ======================
-
     @Test
     void shouldCreateExpenseSuccessfully() throws Exception {
 
@@ -69,9 +65,6 @@ class ExpenseControllerTest {
                 .andExpect(status().isOk());
     }
 
-    // ======================
-    // ❌ NEGATIVE TESTS
-    // ======================
 
     @Test
     void shouldFailForNegativeAmount() throws Exception {
@@ -112,10 +105,6 @@ class ExpenseControllerTest {
                 .andExpect(status().isBadRequest());
     }
 
-    // ======================
-    // 🔁 IDEMPOTENCY TEST (FIXED)
-    // ======================
-
     @Test
     void shouldReturnSameResponseForSameIdempotencyKey() throws Exception {
 
@@ -143,9 +132,6 @@ class ExpenseControllerTest {
         Assertions.assertTrue(response2.contains("\"amount\":1000"));
     }
 
-    // ======================
-    // 🧩 HELPER
-    // ======================
 
     private CreateExpenseRequest validRequest() {
         CreateExpenseRequest request = new CreateExpenseRequest();

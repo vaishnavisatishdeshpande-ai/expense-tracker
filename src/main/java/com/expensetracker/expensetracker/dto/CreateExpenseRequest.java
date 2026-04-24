@@ -19,9 +19,6 @@ public class CreateExpenseRequest {
 
     private String description;
 
-
-    // getters and setters
-
     public long getAmount() {
         return amount;
     }
